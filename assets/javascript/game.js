@@ -2,26 +2,26 @@
 let qui = {
             name:     'Qui-Gon',
             health:   120,
-            attack:    10,
-            counter:    10    
+            attack:    7,
+            counter:    11    
                             }
 let luke = {
             name:   'Luke Skywalker',
             health:   100,
-            attack:    7,
+            attack:    6,
             counter:    15,    
                             }
 let vader = {
             name:   'Darth Vader',
             health:   200,
-            attack:    16,
+            attack:    5,
             counter:    10    
                            }
 let maul = {
             name:   'Darth Maul',
             health:   150,
-            attack:    5,
-            counter:    12    
+            attack:    8,
+            counter:    20    
                             }
 //sets a player variable that will hold the players info
 let player;
@@ -108,26 +108,33 @@ let enemyCount = 0;
      })
 
      $(".attackBtn").on('click', function(){
-
          let playerAtt = Math.floor(Math.random() * player.attack);
          let enemyAtt = Math.floor(Math.random() * enemy.counter); 
             player.health -= enemyAtt;
             enemy.health -= playerAtt;
+            player.attack += playerAttPlus;
             $('.battleText').html('you attacked ' + enemy.name + ' for ' + playerAtt + ' damage' + '<br>' + enemy.name + ' attacked you back for ' + enemyAtt + ' damage');
             playerHP.html('Health: ' + player.health);
             enemyHP.html('Health: ' + enemy.health);
-            player.attack += playerAttPlus;
-            console.log(player.health);
             if(player.health <= 0){
                 $('.battleText').html('You\'ve been defeated, GAME OVER!!!');
+                $('.reset').append('Reset').css({'border' : '3px solid white'});
+                $('.reset').on('click', function(){
+                    location.reload();
+                })
             }
             if(enemy.health <= 0){
                 $('.battleText').html('You defeated ' + enemy.name + ' you can choose another opponent.')
                 $('.enemy').html('');
-                enemycount ++;
+                enemyCount ++;
             }
-            if(enemycount === 3){
-                $('.possibleEnemy').html('You defeated all enemies. YOU WIN!!!');
+            if(enemyCount === 3){
+                $('.possibleEnemy').html('You defeated all enemies. YOU WIN!!!').css({'margin-top' : '100px'});
+                $('.battleText').html('');
+                $('.reset').append('Play Again?').css({'border' : '3px solid white'});
+                $('.reset').on('click', function(){
+                    location.reload();
+                })
             }
      })
 

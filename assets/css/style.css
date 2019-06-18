@@ -1,7 +1,9 @@
 body{
     display: flex row;
-    background-color: darkgray;
+    background-image: url('../images/background.gif');
+    background-size: cover;
     justify-content: space-between;
+    color: white;
 }
 #qui{
 height: 100px;
@@ -33,6 +35,7 @@ button{
     background-color: lightgray;
     text-align: center;
     margin-right: 10px;
+    color: black;
 }
 .flex-center{
     display:flex;
@@ -57,13 +60,18 @@ font-weight: 200;
 }
 .attackBtn{
     width: 60px;
-    background-color: lightgray;
-    border: 3px solid black;
+    background-color: black;
+    border: 3px solid white;
 }
 .attackBtn p{
     font-size: 20px;
     cursor: pointer;
 }
-/* .enemy{
-    display: flex;
-} */
+.reset{
+    width: 60px;
+    background-color: black;
+    /* border: 3px solid black; */
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+}
