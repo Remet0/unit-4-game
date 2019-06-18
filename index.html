@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="flex-center">
+<p class="title">Star Wars RPG!!</p></div>
+
+<div class="select-container">
+        
+         <div class="heroContainer"> 
+            Qui Gon
+            <img id='qui' src="./assets/images/Qui-Gon.jpeg" alt="" data-character="quigon">
+           <p class="quiHP">Health: 120</p> 
+        </div>
+        
+        
+        <div class="heroContainer"> 
+            Luke 
+            <img id="luke" src="./assets/images/Luke.jpg" alt="Luke Skywalker" data-character="luke"> 
+           <p class="lukeHP">Health: 100</p> 
+        </div>
+
+        <div class="heroContainer">
+            Darth Vader
+            <img id="vader" src="./assets/images/Vader.jpg" alt="Darth Vader" data-character="vader">
+           <p class="vaderHP">Health: 200</p> 
+        </div>
+
+        <div class="heroContainer">
+            Darth Maul
+            <img id="maul" src="./assets/images/Maul.jpg" alt="" data-character="maul">
+            <p class="maulHP">Health: 150</p>
+
+        </div>
+
+
+</div>
+<div class="player">
+<p class='gameText'>Your Character:</p>
+</div>
+
+<p class="gameText">Enemies available to Attack:</p>
+
+<div class="possibleEnemy">
+</div>
+
+
+<div class="attackBtn">
+<p>Attack</p>
+</div>
+
+<p class="gameText">Defender</p>
+
+<div class="enemy">
+</div>
+
+<p class="battleText"></p>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="./assets/javascript/game.js"></script> 
+</body>
+</html>
