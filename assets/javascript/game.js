@@ -2,26 +2,30 @@
 let qui = {
             name:     'Qui-Gon',
             health:   120,
-            attack:    7,
-            counter:    11    
+            attack:    10,
+            counter:    11,
+            status: 'alive'    
                             }
 let luke = {
             name:   'Luke Skywalker',
             health:   100,
-            attack:    6,
-            counter:    15,    
+            attack:    8,
+            counter:    15,
+            status: 'alive'     
                             }
 let vader = {
             name:   'Darth Vader',
             health:   200,
-            attack:    5,
-            counter:    10    
+            attack:    9,
+            counter:    10,
+            status: 'alive'     
                            }
 let maul = {
             name:   'Darth Maul',
             health:   150,
-            attack:    8,
-            counter:    20    
+            attack:    7,
+            counter:    20,
+            status: 'alive'     
                             }
 //sets a player variable that will hold the players info
 let player;
@@ -31,6 +35,7 @@ let playerHP;
 let enemyHP;
 let playerAttPlus;
 let enemyCount = 0;
+
 
 
 
@@ -108,6 +113,7 @@ let enemyCount = 0;
      })
 
      $(".attackBtn").on('click', function(){
+         if(enemy.status === 'alive'){
          let playerAtt = Math.floor(Math.random() * player.attack);
          let enemyAtt = Math.floor(Math.random() * enemy.counter); 
             player.health -= enemyAtt;
@@ -123,10 +129,13 @@ let enemyCount = 0;
                     location.reload();
                 })
             }
-            if(enemy.health <= 0){
+        }
+            if(enemy.health <= 0 && enemy.status === 'alive'){
                 $('.battleText').html('You defeated ' + enemy.name + ' you can choose another opponent.')
                 $('.enemy').html('');
+                enemy.status = 'dead';
                 enemyCount ++;
+                player.attack /= 3;
             }
             if(enemyCount === 3){
                 $('.possibleEnemy').html('You defeated all enemies. YOU WIN!!!').css({'margin-top' : '100px'});
