@@ -1,29 +1,29 @@
 //sets the objects to hold character values
 let qui = {
             name:     'Qui-Gon',
-            health:   120,
-            attack:    10,
+            health:   130,
+            attack:    9,
             counter:    11,
             status: 'alive'    
                             }
 let luke = {
             name:   'Luke Skywalker',
-            health:   100,
-            attack:    8,
+            health:   140,
+            attack:    7,
             counter:    15,
             status: 'alive'     
                             }
 let vader = {
             name:   'Darth Vader',
             health:   200,
-            attack:    9,
+            attack:    5,
             counter:    10,
             status: 'alive'     
                            }
 let maul = {
             name:   'Darth Maul',
             health:   150,
-            attack:    7,
+            attack:    6,
             counter:    20,
             status: 'alive'     
                             }
